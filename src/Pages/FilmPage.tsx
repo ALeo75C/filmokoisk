@@ -27,21 +27,28 @@ export default function FilmPage() {
                 <div className="MovieCard">
                     <div className="poster" style={{backgroundImage: `url(${film.poster})`}} />
                     <div className="info">
-                        <h2>{film.title}</h2>
+                        <div className="header">
+                            <h2>{film.title}</h2>
+                            <Score val={Number(film.rating)}/>
+                        </div>
                         <div className="infoBlock">
-                            <span>Жанр</span>
+                            <span>Жанр:</span>
                             <p>{film.genre}</p>
                         </div>
                         <div className="infoBlock">
-                            <span>Год выпуска</span>
+                            <span>Год выпуска:</span>
                             <p>{film.release_year}</p>
                         </div>
                         <div className="infoBlock">
-                            <span>Описание</span>
+                            <span>Рейтинг:</span>
+                            <p>{film.rating}</p>
+                        </div>
+                        <div className="infoBlock _">
+                            <span>Описание:</span>
+                            <br/>
                             <p>{film.description}</p>
                         </div>
                     </div>
-                    <Score val={Number(film.rating)}/>
                 </div>
                 <ActorsBlock actors={actors}/>
             </div>

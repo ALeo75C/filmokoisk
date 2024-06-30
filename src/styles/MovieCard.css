@@ -31,7 +31,7 @@ h2 {
     margin-top: 12px;
 }
 
-span {
+.MainPage .infoBlock span {
     color: var(--color-gray-text);
     min-width: 90px;
     margin-right: 16px;

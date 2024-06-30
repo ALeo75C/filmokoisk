@@ -1,8 +1,10 @@
 import { useEffect, useRef, useState } from "react";
+import Arrow from '../assets/icons/arrow-right.svg?react'
+
 import { Actor } from "../types";
 
 interface FilterPropsType {
-    actors: Actor[],
+    actors: Actor[] | undefined,
 }
 
 const step = 300
@@ -39,8 +41,8 @@ const ActorsBlock: React.FC<FilterPropsType> = ({actors}) => {
     
     return (
       <div className="actorsBlock">
-        {scrolled ? <button className="scrollBtn" onClick={scrollLeft}>{"<"}</button> : ''}
         <h2>Актеры</h2>
+        {scrolled ? <Arrow className="scrollBtn left" onClick={scrollLeft}/> : ''}
         <div className="wrapper" ref={wrapperRef}>
             <div ref={scrollContainerRef} className="actorsCardCollection">
                 {
@@ -54,7 +56,7 @@ const ActorsBlock: React.FC<FilterPropsType> = ({actors}) => {
                 }
             </div>
         </div>
-        { canScrolled ? <button  className="scrollBtn"  onClick={scrollRight}>{">"}</button> : '' }
+        { canScrolled ? <Arrow className="scrollBtn right" onClick={scrollRight}/> : '' }
       </div>
     );
 }

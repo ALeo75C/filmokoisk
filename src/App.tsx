@@ -7,6 +7,8 @@ import FilmPage from "./Pages/FilmPage"
 import ErrorPage from "./Pages/ErrorPage"
 import Header from "./components/Header"
 
+import './styles/index.css'
+
 const router = createBrowserRouter([
     {
         path: '/',
