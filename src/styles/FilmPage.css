@@ -1,0 +1,32 @@
+.FilmPage {
+
+}
+
+.actorsBlock {
+    margin-top: 24px;
+}
+.wrapper {
+    width: 100%;
+    overflow: hidden;
+    scroll-behavior: smooth;
+}
+.actorsCardCollection {
+    display: flex;
+    gap: 24px;
+    width: fit-content;
+}
+.actorCard p {
+    font-size: 14px;
+    margin-top: 16px;
+}
+.actorCard .poster {
+    margin-right: 0;
+}
+.actorPhoto {
+    width: 180px;
+    height: 230px;
+}
+.scrollBtn {
+    
+}
+  

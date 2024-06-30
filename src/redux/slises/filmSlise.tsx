@@ -1,10 +1,8 @@
 import {createSlice} from '@reduxjs/toolkit'
 import { getFilm } from '../thunk'
+import { Actor } from '../../types'
 
-type actorType = {
-    name: string;
-    photo: string
-}
+
 type initialStateType = {
     requestStatus: string,
     film?: {
@@ -17,7 +15,7 @@ type initialStateType = {
         title: string
         total_rates_count: string
     }
-    actors?: actorType[]
+    actors?: Actor[]
 }
 
 const initialState: initialStateType = {
