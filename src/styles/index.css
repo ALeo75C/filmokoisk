@@ -1,0 +1,104 @@
+@import url(./reset.css);
+@import url(./fonts.css);
+
+#root {
+  --color-backgound: #EDEDED;
+  --color-black: #333333;
+  --color-text: #1B1F23;
+  --color-gray-text: #ABABAB;
+  --color-white: #FFFFFF;
+  --color-pimary: #FF5500;
+  --color-plaseholer: #999FA6;
+  --border-radius: 8px;
+
+  font-family: 'SF-regular';
+ 
+  padding: 0 32px 16px;
+  background-color: var(--color-backgound);
+  color: var(--color-text);
+  min-height: 100vh;
+}
+
+.MainPage {
+  display: flex;
+  gap: 24px;
+}
+.ErrorPage, .Loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.ErrorPage h3 {
+  margin-bottom: 4px;
+}
+.ErrorPage p {
+  color: var(--color-plaseholer);
+}
+.CardsCollection, .ErrorPage, .Loader {
+  min-height: 79vh;
+}
+.Loader svg {
+  animation: spin 1.5s linear infinite;
+}
+.right {
+  width: 72vw;
+}
+
+.Button {
+  box-sizing: border-box;
+  cursor: pointer;
+  padding: 8px 16px;
+  color: var(--color-pimary);
+  border: 1px solid var(--color-pimary);
+  border-radius: var(--border-radius);
+}
+.Button.fill {
+  color: var(--color-white);
+  background-color: var(--color-pimary);
+}
+
+h1 {
+  font-size: 32px;
+  font-weight: bold;
+  display: block;
+}
+h2 {
+  font-size: 20px;
+  font-weight: bold;
+}
+h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.poster {
+  border-radius: var(--border-radius);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+input {
+  padding: 12px;
+  padding-left: 36px;
+  background: var(--color-white);
+  width: 400px;
+  border-radius: var(--border-radius);
+  margin-bottom: 16px;
+  font-size: 14px;
+  border: 1px solid var(--color-white);
+}
+input::placeholder {
+  color: var(--color-plaseholer);
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}

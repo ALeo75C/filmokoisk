@@ -1,0 +1,29 @@
+.Pagination {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-top: 16px;
+}
+
+.arrowBtn {
+    display: flex;
+    padding: 10px;
+    width: 32px;
+    height: 32px;
+    background: var(--color-white);
+    border-radius: 100%;
+    filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.3));
+    cursor: pointer;
+}
+.arrowBtn svg path {
+    fill: var(--color-text)
+}
+.arrowBtn.disabled {
+    background-color: var(--color-backgound);
+}
+.arrowBtn.disabled svg path {
+    fill: var(--color-gray-text);
+}
+.arrowBtn:first-of-type{
+    transform: rotate(180deg);
+}

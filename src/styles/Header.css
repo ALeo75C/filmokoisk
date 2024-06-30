@@ -1,0 +1,19 @@
+.Header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    width: calc(100% + 64px);
+    padding: 18px 32px 24px;
+    margin-left: -32px;
+    margin-bottom: 20px;
+    background-color: var(--color-black);
+    color: var(--color-white);
+    z-index: 10;
+}
+
+.profileContainer {
+    display: flex;
+    gap: 16px;
+}

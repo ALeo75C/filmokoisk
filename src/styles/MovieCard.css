@@ -1,0 +1,39 @@
+.MovieCard {
+    display: flex;
+    padding: 24px;
+    background-color: var(--color-white);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+}
+
+.MovieCard + .MovieCard {
+    margin-top: 16px;
+}
+
+.MovieCard .infoBlock {
+    max-width: 600px;
+}
+
+h2 {
+    margin-bottom: 16px;
+}
+
+.poster {
+    min-width: 100px;
+    height: 120px;
+    margin-right: 24px;
+}
+
+.infoBlock {
+    display: flex;
+}
+.infoBlock + .infoBlock {
+    margin-top: 12px;
+}
+
+span {
+    color: var(--color-gray-text);
+    min-width: 90px;
+    margin-right: 16px;
+    font-size: 14px;
+}
