@@ -8,11 +8,15 @@ interface ScotePropsType {
 }
 
 const createScoreItems = (count: number, score: number) => {
+    const handleClick = (e, val: number) => {
+        e.stopPropagation()
+        console.log(val)
+    }
     const items = []
     let currScore = Math.round(score)
     for (let index = 1; index <= count; index++) {
         items.push(
-            <div key={index} className={`point ${currScore>0 ? 'active' : ''}`}>
+            <div onClick={(e) => handleClick(e, index)} key={index} className={`point ${currScore>0 ? 'active' : ''}`}>
                 <Star/>
                 <span>{index}</span>
             </div>

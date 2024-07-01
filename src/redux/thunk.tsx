@@ -1,6 +1,13 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { resMoviesSearchType, ArgsType, FullMovieInfo } from "../types";
 import { RootState } from "./store";
+type userType = {
+    "username": string,
+    "password": string
+  }
+type tokenResType = {
+    "token": string
+  }
 
 const url: {[key in string]: string} =  {
     root: 'http://localhost:3030',
@@ -65,6 +72,36 @@ export const getFilm = createAsyncThunk<
                 return rejectWithValue('empty');
             }
             const data: FullMovieInfo = await response.json();
+            return data;
+        } catch (error: unknown) {
+            let errorMessage = 'An unknown error occurred';
+            if (error instanceof Error) {
+                errorMessage = error.message;
+            }
+            return rejectWithValue(errorMessage);
+        }
+    },  { }
+);
+
+export const getUser = createAsyncThunk<
+    tokenResType,
+    userType,
+    { rejectValue: string, state: RootState }>
+    (
+    'user/getUser',
+    async (args, { rejectWithValue }) => {
+        try {
+            const requestOptions = {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(args)
+            };
+            const response = await fetch(url.root + url.apiV + url.login, requestOptions);
+            if (!response.ok) {
+                return rejectWithValue('empty');
+            }
+            const data: tokenResType = await response.json();
+            console.log(data)
             return data;
         } catch (error: unknown) {
             let errorMessage = 'An unknown error occurred';

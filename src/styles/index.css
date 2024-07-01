@@ -19,6 +19,12 @@
   min-height: 100vh;
 }
 
+.Btns {
+  display: flex;
+  margin-top: 24px;
+  gap: 8px;
+}
+
 a {
   color: var(--color-white) !important
 }
@@ -141,6 +147,18 @@ input {
 }
 input::placeholder {
   color: var(--color-plaseholer);
+}
+
+.profileContainer .block {
+  display: flex;
+  gap: 16px;
+}
+
+.profileContainer .block svg {
+  width: 40px;
+  height: 40px;
+  background-color: var(--color-white);
+  border-radius: 20px;
 }
 
 @keyframes spin {

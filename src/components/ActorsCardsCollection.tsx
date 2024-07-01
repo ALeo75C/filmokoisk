@@ -17,11 +17,11 @@ const ActorsBlock: React.FC<FilterPropsType> = ({actors}) => {
     const wrapperRef = useRef(null);
 
     useEffect(()=> {
-        setCanScrolled(scrollContainerRef?.current.clientWidth >= wrapperRef.current.clientWidth)
+        setCanScrolled(scrollContainerRef.current?.clientWidth >= wrapperRef.current?.clientWidth)
     }, [])
 
     useEffect(()=> {
-        if (scrollPosition + wrapperRef.current.clientWidth >= scrollContainerRef?.current.clientWidth) setCanScrolled(false)
+        if (scrollPosition + wrapperRef.current?.clientWidth >= scrollContainerRef.current?.clientWidth) setCanScrolled(false)
         if (scrollPosition <= 0) setScrolled(false)
     }, [scrollPosition])
     
@@ -29,14 +29,14 @@ const ActorsBlock: React.FC<FilterPropsType> = ({actors}) => {
         setScrolled(true)
         setScrollPosition(position => position + step)
         
-        console.log(scrollContainerRef?.current.clientWidth, wrapperRef.current.clientWidth)
-        wrapperRef.current.scrollBy({ left: step, behavior: 'smooth' });
+        console.log(scrollContainerRef.current?.clientWidth, wrapperRef.current?.clientWidth)
+        wrapperRef.current?.scrollBy({ left: step, behavior: 'smooth' });
     };
     
     const scrollLeft = () => {
         setCanScrolled(true)
         setScrollPosition(position => position - step)
-        wrapperRef.current.scrollBy({ left: -step, behavior: 'smooth' });
+        wrapperRef.current?.scrollBy({ left: -step, behavior: 'smooth' });
     };
     
     return (
